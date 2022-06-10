@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RecipeCard from "./components/RecipeCard";
 import Search from "./components/Search";
+import { SimpleGrid, Box } from "@chakra-ui/react";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,8 +11,15 @@ function App() {
 
   return (
     <div>
-      <Search />
-      <RecipeCard />
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <SimpleGrid p="5" columns={[1, 2, 3]} spacing="5">
+        <Box>
+          <RecipeCard />
+        </Box>
+        <Box>
+          <RecipeCard />
+        </Box>
+      </SimpleGrid>
     </div>
   );
 }

@@ -1,9 +1,6 @@
 import { Flex, Input } from "@chakra-ui/react";
-import { useState } from "react";
 
-const Search = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const Search = ({ searchTerm, setSearchTerm }) => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
