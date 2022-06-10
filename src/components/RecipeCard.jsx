@@ -9,6 +9,8 @@ import {
 } from "@chakra-ui/react";
 
 const RecipeCard = ({ label, image, healthLabels, ingredientLines }) => {
+  const colors = ["green", "purple", "yellow", "blue", "red"];
+
   return (
     <Container
       p="2"
@@ -47,7 +49,9 @@ const RecipeCard = ({ label, image, healthLabels, ingredientLines }) => {
                 <Badge
                   key={index}
                   m="1"
-                  colorScheme="green"
+                  colorScheme={
+                    colors[Math.floor(Math.random() * colors.length)]
+                  }
                   fontSize="xx-small"
                 >
                   {healthLabel}
