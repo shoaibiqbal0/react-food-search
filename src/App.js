@@ -32,9 +32,8 @@ function App() {
         ) : (
           recipeData.hits.map((item, index) => {
             return (
-              <Box>
+              <Box key={index}>
                 <RecipeCard
-                  key={index}
                   label={item.recipe.label}
                   image={item.recipe.image}
                   healthLabels={item.recipe.healthLabels}
