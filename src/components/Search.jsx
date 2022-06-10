@@ -1,6 +1,6 @@
 import { Flex, Input } from "@chakra-ui/react";
 
-const Search = ({ searchTerm, setSearchTerm }) => {
+const Search = ({ searchTerm, setSearchTerm, searchRecipe }) => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -13,6 +13,8 @@ const Search = ({ searchTerm, setSearchTerm }) => {
         variant="filled"
         onChange={handleChange}
         value={searchTerm}
+        onKeyDown={searchRecipe}
+        placeholder="Enter a receipe to start.."
       />
     </Flex>
   );
