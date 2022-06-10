@@ -1,3 +1,4 @@
+import "../index.css";
 import {
   Container,
   Image,
@@ -19,15 +20,24 @@ const RecipeCard = () => {
     >
       <VStack>
         <Image src={pic} />
-        <Text textAlign="center" pt="2" w="100%">
+        <Text
+          fontFamily="Dancing Script"
+          fontSize="3xl"
+          textAlign="center"
+          p="2"
+          w="100%"
+          bgGradient="linear(to-r, blue.200, purple.200)"
+          bgClip="text"
+          fontWeight="bold"
+        >
           Pasta alla Gricia Recipe
         </Text>
-        <VStack borderRadius="5" p="2" bgColor="green">
+        <VStack borderRadius="5" p="2" bgColor="gray.700">
           <Text w="100%">1 1/2 to 2 ounces of guanciale</Text>
           <Text w="100%">2 tablespoons of grated Pecorino Romano</Text>
           <Text w="100%">4 ounces of dried pasta</Text>
         </VStack>
-        <HStack wrap="wrap" pt="2">
+        <HStack wrap="wrap" pt="2" justify="center">
           <Badge m="1" colorScheme="green" fontSize="xx-small">
             Sugar-Conscious
           </Badge>
