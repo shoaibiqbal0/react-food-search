@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import RecipeCard from "./components/RecipeCard";
+import Search from "./components/Search";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const appId = "0c56d2a4";
+  const appKey = "b70994638724f6f43c5c6cc323beba29";
+  const searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=${appId}&app_key=${appKey}`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Search />
+      <RecipeCard />
     </div>
   );
 }
